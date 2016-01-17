@@ -1,0 +1,16 @@
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\SeleniumLog.config
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\HelpSys.exe.config
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\HelpSys.exe
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\HelpSys.pdb
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\PostSharp.dll
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\SeleniumLog.dll
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\WebDriver.dll
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\WebDriver.Support.dll
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\SeleniumLog.pdb
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\PostSharp.xml
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\WebDriver.xml
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\WebDriver.Support.xml
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\bin\Debug\HelpSys.pssym
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\obj\Debug\HelpSys.exe
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\obj\Debug\HelpSys.pdb
+C:\GitHub\LogTree\Extensions\Visual Studio\HelpSys\obj\Debug\HelpSys.exe.postsharp

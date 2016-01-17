@@ -1,0 +1,12 @@
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\SeleniumLog.config
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\Example Selenium Automation Project.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\Example Selenium Automation Project.pdb
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\obj\Debug\Example Selenium Automation Project.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\obj\Debug\Example Selenium Automation Project.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\Example Selenium Automation Project\obj\Debug\Example Selenium Automation Project.pdb

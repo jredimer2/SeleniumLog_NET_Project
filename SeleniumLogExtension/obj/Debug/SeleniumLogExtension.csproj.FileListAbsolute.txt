@@ -1,0 +1,8 @@
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Debug\SeleniumLog.pdb

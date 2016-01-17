@@ -1,0 +1,22 @@
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\obj\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog3\Extensions\For .NET\ExampleAsserts\obj\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\obj\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog .NET Extension\ExampleAsserts\obj\Debug\ExampleAsserts.pdb
