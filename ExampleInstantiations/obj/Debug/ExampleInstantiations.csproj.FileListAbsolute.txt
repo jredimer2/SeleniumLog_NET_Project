@@ -24,3 +24,16 @@ C:\GitHub\SeleniumLog .NET Extension\ExampleInstantiations\bin\Debug\WebDriver.S
 C:\GitHub\SeleniumLog .NET Extension\ExampleInstantiations\obj\Debug\ExampleInstantiations.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog .NET Extension\ExampleInstantiations\obj\Debug\ExampleInstantiations.exe
 C:\GitHub\SeleniumLog .NET Extension\ExampleInstantiations\obj\Debug\ExampleInstantiations.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\SeleniumLog.config
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\ExampleInstantiations.exe.config
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\ExampleInstantiations.exe
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\ExampleInstantiations.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\obj\Debug\ExampleInstantiations.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\obj\Debug\ExampleInstantiations.exe
+C:\GitHub\SeleniumLog for .NET 2\ExampleInstantiations\obj\Debug\ExampleInstantiations.pdb

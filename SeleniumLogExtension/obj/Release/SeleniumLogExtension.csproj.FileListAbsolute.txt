@@ -7,3 +7,11 @@ C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Release\WebD
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Release\SeleniumLog.dll
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Release\SeleniumLog.pdb
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Release\SeleniumLogExtension.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\bin\Release\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\obj\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\SeleniumLogExtension\obj\Release\SeleniumLog.pdb

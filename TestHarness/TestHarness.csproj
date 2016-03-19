@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSimpleText.cs" />
     <Compile Include="datastruct1.cs" />
     <Compile Include="datstruct2.cs" />
     <Compile Include="Program.cs" />

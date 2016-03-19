@@ -36,3 +36,22 @@ C:\GitHub\SeleniumLog .NET Extension\TestHarness\bin\Debug\WebDriver.Support.xml
 C:\GitHub\SeleniumLog .NET Extension\TestHarness\obj\Debug\TestHarness.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog .NET Extension\TestHarness\obj\Debug\TestHarness.exe
 C:\GitHub\SeleniumLog .NET Extension\TestHarness\obj\Debug\TestHarness.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\SeleniumLog.config
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\TestHarness.exe.config
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\TestHarness.exe
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\TestHarness.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\Example SeleniumLog.com Automation Project.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\ExampleExploreTest.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\Example SeleniumLog.com Automation Project.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\ExampleExploreTest.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\obj\Debug\TestHarness.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\obj\Debug\TestHarness.exe
+C:\GitHub\SeleniumLog for .NET 2\TestHarness\obj\Debug\TestHarness.pdb

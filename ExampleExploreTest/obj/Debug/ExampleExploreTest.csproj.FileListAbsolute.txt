@@ -20,3 +20,14 @@ C:\GitHub\SeleniumLog .NET Extension\ExampleExploreTest\bin\Debug\WebDriver.Supp
 C:\GitHub\SeleniumLog .NET Extension\ExampleExploreTest\obj\Debug\ExampleExploreTest.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog .NET Extension\ExampleExploreTest\obj\Debug\ExampleExploreTest.dll
 C:\GitHub\SeleniumLog .NET Extension\ExampleExploreTest\obj\Debug\ExampleExploreTest.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\ExampleExploreTest.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\ExampleExploreTest.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\obj\Debug\ExampleExploreTest.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\obj\Debug\ExampleExploreTest.dll
+C:\GitHub\SeleniumLog for .NET 2\ExampleExploreTest\obj\Debug\ExampleExploreTest.pdb

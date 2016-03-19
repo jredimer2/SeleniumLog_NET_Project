@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XMLConfig;
 
 namespace SeleniumLogger
 {
@@ -20,8 +21,12 @@ namespace SeleniumLogger
             {
                 Stack MessageStack = new Stack();
                 string ReturnString = "";
+                string ReturnString2 = "";
+                string MessageString2 = "";
+                string SimpleMessageType = "INFO";
                 string PathString = "";
                 string FormattingString = "";
+                XmlConfigurationClass config = XmlConfigurationClass.Instance();
 
                 // Step 1: Write flags
                 if (WatchdogStart == true)
@@ -40,24 +45,28 @@ namespace SeleniumLogger
                 {
                     MessageStack.Push("PASS");
                     Pass = false;
+                    SimpleMessageType = "PASS";
                 }
 
                 if (Fail == true)
                 {
                     MessageStack.Push("FAIL");
                     Fail = false;
+                    SimpleMessageType = "FAIL";
                 }
 
                 if (Warning == true)
                 {
                     MessageStack.Push("WARNING");
                     Warning = false;
+                    SimpleMessageType = "WARNING";
                 }
 
                 if (Error == true)
                 {
                     MessageStack.Push("ERROR");
                     Error = false;
+                    SimpleMessageType = "ERROR";
                 }
 
                 if (Indent > 0)
@@ -153,11 +162,26 @@ namespace SeleniumLogger
                     ReturnString = "<" + FormattingString + ";TIMESTAMP:" + DateTime.Now.ToString(_TimestampFormat) + ">" + MessageStr;
                 }
 
+                MessageString2 = MessageStr;
+
                 ResetDefaultValues();
 
                 if (EnableLogging) indentModel.SimulateIndentations(ReturnString);
-                //Console.WriteLine("FORMAT_STR: indentModel.CurrentLevel = " + indentModel.CurrentLevel);
-                return ReturnString;
+
+                if (!config.RichTextOutput)
+                {
+                    for (int i = 0; i < CurrentIndentLevel; i++)
+                    {
+                        Padding = Padding + pad;
+                    }
+                    ReturnString2 = DateTime.Now.ToString(_TimestampFormat) + "	|	" + SimpleMessageType + "	| " + Padding + MessageString2;
+                    Padding = "";
+                    return ReturnString2;
+                }
+                else
+                {
+                    return ReturnString;
+                }
             }
             // Stack Code:
             // http://msdn.microsoft.com/en-us/library/system.collections.stack%28v=vs.110%29.aspx

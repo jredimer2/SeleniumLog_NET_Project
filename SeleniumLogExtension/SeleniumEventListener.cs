@@ -120,15 +120,20 @@ namespace SeleniumLogger
                     }
 
                     //Test component
-                    ReadOnlyCollection<IWebElement> foundelements = driver.FindElements(By.XPath(cummulative_xpath));
-                    if (foundelements.Count > 0)
+                    try
                     {
-                        Results.Add(new Result(result: true, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                        ReadOnlyCollection<IWebElement> foundelements = driver.FindElements(By.XPath(cummulative_xpath));
+                        if (foundelements.Count > 0)
+                        {
+                            Results.Add(new Result(result: true, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                        }
+                        else
+                        {
+                            Results.Add(new Result(result: false, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                        }
                     }
-                    else
-                    {
-                        Results.Add(new Result(result: false, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
-                    }
+                    catch (InvalidSelectorException e) { }
+                     
                 }
 
             }

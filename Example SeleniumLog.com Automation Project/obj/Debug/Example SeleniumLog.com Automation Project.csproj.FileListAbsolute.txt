@@ -20,3 +20,14 @@ C:\GitHub\SeleniumLog .NET Extension\Example SeleniumLog.com Automation Project\
 C:\GitHub\SeleniumLog .NET Extension\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog .NET Extension\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.dll
 C:\GitHub\SeleniumLog .NET Extension\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.pdb
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\Example SeleniumLog.com Automation Project.dll
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\Example SeleniumLog.com Automation Project.pdb
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.dll
+C:\GitHub\SeleniumLog for .NET 2\Example SeleniumLog.com Automation Project\obj\Debug\Example SeleniumLog.com Automation Project.pdb

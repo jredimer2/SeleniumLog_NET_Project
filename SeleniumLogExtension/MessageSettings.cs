@@ -39,6 +39,9 @@ namespace SeleniumLogger
             private Stack _PathsStack = new Stack(); // stack of paths
             public IndentModel indentModel = new IndentModel();
             public bool EnableLogging;
+            public string Padding;
+            public string pad;
+            public string MessageType;
 
             /// <summary>
             /// Constructor
@@ -53,6 +56,9 @@ namespace SeleniumLogger
                 //Unindent = 0;
                 ResetDefaultValues();
                 EnableLogging = true;
+                Padding = "";
+                pad = "   ";
+                MessageType = "";
             }
 
             private void ResetDefaultValues()

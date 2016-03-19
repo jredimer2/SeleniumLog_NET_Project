@@ -244,7 +244,6 @@ namespace SeleniumLogger
             {
                 try
                 {
-                    //Console.WriteLine("..... waiting for file");
                     if (MessageSettings.EnableLogging)
                     {
                         if (Config.TakeScreenshotOnEveryWriteline)
@@ -281,8 +280,6 @@ namespace SeleniumLogger
                                 autoResetEvent.Set();
                             }
                         };
-
-                    //autoResetEvent.WaitOne(); //This causes the write to be blocked as no file lock is released
                 }
             }
         }
@@ -323,21 +320,6 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog IndentTo(int SetLevel)
         {
-            /*
-            if (SetLevel < 0)
-            {
-                MessageSettings.Indent++;
-                //MessageSettings.RunningIndentLevel++;
-                return this;
-            }
-            else
-            {
-                int RequiredUnindents = MessageSettings.RunningIndentLevel - SetLevel;
-                MessageSettings.Indent = 0;
-                Unindent(RequiredUnindents);
-                return this;
-            } 
-            */
             int Delta = SetLevel - MessageSettings.CurrentIndentLevel;
             if (Delta > 0)
             {
@@ -351,9 +333,6 @@ namespace SeleniumLogger
                 MessageSettings.Unindent = 0;
                 Unindent(Math.Abs(Delta));
             }
-
-            //MessageSettings.CalculatePendingLevel();
-
             return this;
         }
 
@@ -366,17 +345,12 @@ namespace SeleniumLogger
         {
 
             MessageSettings.Indent++;
-            //MessageSettings.CurrentIndentLevel++;
 
             if (WriteNow)
             {
                 string StrToWrite = MessageSettings.FormMessageString();
-                //File.AppendAllText(_LogFilePath, StrToWrite + "\n");
                 WriteLine(StrToWrite);
             }
-
-            //MessageSettings.CalculatePendingLevel();
-
         }
 
         /// <summary>
@@ -388,11 +362,6 @@ namespace SeleniumLogger
 
             if ((MessageSettings.CurrentIndentLevel - 1) >= 0)
                 MessageSettings.Unindent = MessageSettings.Unindent + 1;
-                //MessageSettings.Unindent++;
-            //MessageSettings.RunningIndentLevel--;
-
-            //MessageSettings.CalculatePendingLevel();
-
             return this;
         }
 
@@ -403,29 +372,10 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Unindent(int Number)
         {
-            /*
-            if (Number < 0)
-            {
-                MessageSettings.Unindent++;
-                MessageSettings.RunningIndentLevel--;
-                return this;
-            }
-            else
-            {
-                MessageSettings.Unindent = MessageSettings.Unindent + Number;
-                MessageSettings.RunningIndentLevel = MessageSettings.RunningIndentLevel - Number;
-                return this;
-            }
-             */
-
-            //MessageSettings.Unindent = MessageSettings.Unindent + Math.Abs(Number);
             for (int i = 0; i < Math.Abs(Number); i++ )
             {
                 Unindent();
             }
-
-            //MessageSettings.CalculatePendingLevel();
-
             return this;
         }
 
@@ -438,17 +388,12 @@ namespace SeleniumLogger
         {
 
             MessageSettings.Unindent++;
-            //MessageSettings.CurrentIndentLevel--;
 
             if (WriteNow)
             {
                 string StrToWrite = MessageSettings.FormMessageString();
-                //File.AppendAllText(_LogFilePath, StrToWrite + "\n");
-                WriteLine(StrToWrite);
+                 WriteLine(StrToWrite);
             }
-
-            //MessageSettings.CalculatePendingLevel();
-
         }
 
         /// <summary>

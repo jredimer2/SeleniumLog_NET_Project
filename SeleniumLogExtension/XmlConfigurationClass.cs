@@ -43,6 +43,7 @@ namespace XMLConfig
     public sealed class XmlConfigurationClass
     {
         public bool EnableSeleniumLog { get; set; }
+        public bool RichTextOutput { get; set; }
         public string TimestampFormat { get; set; }
         public string LogFilePath { get; set; }
         public bool WriteLineNumbers { get; set; }
@@ -202,6 +203,10 @@ namespace XMLConfig
                                     EnableSeleniumLog = TrueOrFalse("Enable SeleniumLog", xNav.Value);
                                     break;
 
+                                case "Rich text output":
+                                    RichTextOutput = TrueOrFalse("Rich text output", xNav.Value);
+                                    break;
+
                                 case "Timestamp format":
                                     TimestampFormat = xNav.Value;
                                     break;
@@ -213,7 +218,6 @@ namespace XMLConfig
                                 case "Write line numbers":
                                     WriteLineNumbers = TrueOrFalse("Write line numbers", xNav.Value);
                                     break;
-
 
                                 case "Auto-launch SeleniumLog Desktop":
                                     AutoLaunchSeleniumLogDesktop = TrueOrFalse("Auto-launch SeleniumLog Desktop", xNav.Value);
