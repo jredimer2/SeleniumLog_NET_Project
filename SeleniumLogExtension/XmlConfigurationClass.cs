@@ -1,45 +1,15 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.XPath;
+using System.Windows.Forms;
 
 namespace XMLConfig
 {
-    /*
-     public class _Config
-     {
-            public bool EnableSeleniumLog { get; set; }
-            public bool Enable_Selenium_Webdriver_Trace { get; set; }
-            public bool Enable_Generic_Function_Trace { get; set; }
-            public string TimestampFormat { get; set; }
-            public string OutputFilePath { get; set; }
-            public string ScreenshotsFolder { get; set; }
-            public bool ScreenshotOnEveryMessage { get; set; }
-            public bool ScreenshotOnEveryPass { get; set; }
-            public bool ScreenshotOnEveryFail { get; set; }
-            public bool ScreenshotOnEveryError { get; set; }
-            public bool ScreenshotOnEveryWarning { get; set; }
-            public bool ForceThrowExceptionOnAssertFail { get; set; }
-            public bool LogLowLevelSeleniumCommands { get; set; }
-
-            public bool OnClick_LogFunctionStart { get; set; }
-            public bool OnClick_LogFunctionEnd { get; set; }
-            public bool OnClick_ScreenshotOnStart { get; set; }
-            public bool OnClick_ScreenshotOnEnd { get; set; }
-            public bool FunctionTrace_DisplayNullInputs { get; set; }
-
-            public string ExceptionMessageBuffer = "";
-
-            public _Config()
-            {
-            }
-            
-    }
-     */
-
     public sealed class XmlConfigurationClass
     {
         public bool EnableSeleniumLog { get; set; }
@@ -193,10 +163,8 @@ namespace XMLConfig
                         //Determine whether children exist.
                         if (xNav.HasChildren == true)
                         {
-                            Console.WriteLine("ATTRIB [" + xNav.GetAttribute("option","") + "]");
-                            //Console.WriteLine("is {0} = {1}", xNav.Name, xNav.Value);
+                            //Console.WriteLine("ATTRIB [" + xNav.GetAttribute("option","") + "]");
 
-                            //switch (xNav.Name)
                             switch(xNav.GetAttribute("option",""))
                             {
                                 case "Enable SeleniumLog":
@@ -212,6 +180,10 @@ namespace XMLConfig
                                     break;
 
                                 case "Log file path":
+                                    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value))) {
+                                        MessageBox.Show("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
+                                        throw new Exception("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
+                                    }
                                     LogFilePath = xNav.Value;
                                     break;
 
@@ -219,15 +191,20 @@ namespace XMLConfig
                                     WriteLineNumbers = TrueOrFalse("Write line numbers", xNav.Value);
                                     break;
 
-                                case "Auto-launch SeleniumLog Desktop":
-                                    AutoLaunchSeleniumLogDesktop = TrueOrFalse("Auto-launch SeleniumLog Desktop", xNav.Value);
+                                case "Auto-launch SeleniumLog Viewer":
+                                    AutoLaunchSeleniumLogDesktop = TrueOrFalse("Auto-launch SeleniumLog Viewer", xNav.Value);
                                     break;
 
-                                case "SeleniumLog Desktop Installation Folder":
+                                case "SeleniumLog Viewer Installation Folder":
                                     SeleniumLogAppInstallationFolder = xNav.Value;
                                     break;
 
                                 case "Screenshots folder":
+                                    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value)))
+                                    {
+                                        MessageBox.Show("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
+                                        throw new Exception("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
+                                    }
                                     ScreenshotsFolder = xNav.Value;
                                     break;
 
