@@ -7,6 +7,7 @@ using SeleniumLogger;
 using System.Drawing.Imaging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
@@ -174,8 +175,8 @@ namespace SeleniumTest
             Home.Goto();
             log.Unindent();
 
-            log.WriteLine("Step 2: Goto Buy Now page");
-            Home.BuyNow.Click();
+            //log.WriteLine("Step 2: Goto Buy Now page");
+            //Home.BuyNow.Click();
 
             log.WriteLine("Step 3: Goto Contact Us page");
             Home.ContactUs.Click();

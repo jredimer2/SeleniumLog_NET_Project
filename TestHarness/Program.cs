@@ -87,11 +87,11 @@ namespace TestHarness
         {
             SeleniumLog log = SeleniumLog.Instance();
 
-           //TestCase test = new TestCase();
-           //test.Run();
+           TestCase test = new TestCase();
+           test.Run();
             //TestIndentations_Java_1();
             //TestIndentations();
-            TestSimpleText();
+            //TestSimpleText();
             
  
 
