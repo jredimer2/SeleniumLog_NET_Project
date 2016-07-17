@@ -12,6 +12,8 @@ using System.Drawing.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using XMLConfig;
 using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SeleniumLogger
 {
@@ -19,7 +21,7 @@ namespace SeleniumLogger
     //{
     //    public WriteNow() { }
     //}
-    
+
     /// <summary>
     /// This is the main class that the user instantiates.
     /// </summary>
@@ -36,12 +38,12 @@ namespace SeleniumLogger
         private string CurrentAcceptanceCriteriaPath = "";
         private string CurrentScenarioPath = "";
         private string CurrentPath = "";
-
+ 
         private string CurrentFeature = "";
         private string CurrentUserStory = "";
         private string CurrentTestCase = "";
         private string CurrentScenario = "";
-
+ 
         private int _CurrentLevel = 0;
         private int _FeatureLevel = 1;
         private int _UserStoryLevel = 2;
@@ -49,7 +51,7 @@ namespace SeleniumLogger
         private int _AcceptanceCriteriaLevel = 3;
         private int _TestCaseLevel = 3;
         private int _ScenarioLevel = 4;
-         */ 
+         */
         private Stack _CurrentIndentLevelStack = new Stack();
         private SaveIndents _SavedIndents = new SaveIndents();
         //public static _MessageSettings MessageSettings = new _MessageSettings();
@@ -61,7 +63,7 @@ namespace SeleniumLogger
         public string ScreenshotsPath { get { return _ScreenshotsPath; } }
         private int ActualIndentLevel { get { return MessageSettings.indentModel.CurrentLevel; } }
         private int PendingIndentLevel { get { return MessageSettings.GetPendingLevel(); } }
-        
+
         private List<int> wdlist = new List<int>();
         private IWebDriver driver;
         //public _Config Config = new _Config();
@@ -100,7 +102,7 @@ namespace SeleniumLogger
                 Thread.Sleep(500);
                 if (overwrite)
                     Clear();
-                
+
                 _ScreenshotsPath = Config.ScreenshotsFolder;
                 MessageSettings.TimestampFormat = Config.TimestampFormat;
                 MessageSettings.EnableLogging = Config.EnableSeleniumLog;
@@ -112,14 +114,14 @@ namespace SeleniumLogger
             if (Config.AutoLaunchSeleniumLogDesktop)
             {
                 Process logger = new Process();
-                logger.StartInfo.FileName = Config.SeleniumLogAppInstallationFolder +  @"\SeleniumLog Desktop.exe";
+                logger.StartInfo.FileName = Config.SeleniumLogAppInstallationFolder + @"\SeleniumLog Desktop.exe";
                 logger.StartInfo.Arguments = Config.LogFilePath;
                 logger.Start();
             }
 
         }
 
-        private static SeleniumLog instance = null;      
+        private static SeleniumLog instance = null;
 
         public static SeleniumLog Instance(IWebDriver webdriver = null, bool overwrite = true, bool debug = false)
         {
@@ -155,7 +157,7 @@ namespace SeleniumLogger
             int[] irestore = _SavedIndents.Get(Name);
             if (irestore[1] < 0)
                 IndentTo(0);
-                //Error().Red().WriteLine("ERROR: Cannot restore unknown indent name [" + Name + "]");
+            //Error().Red().WriteLine("ERROR: Cannot restore unknown indent name [" + Name + "]");
             IndentTo(irestore[1]);
             _SavedIndents.DeleteKey(Name, irestore[0]);
         }
@@ -200,7 +202,7 @@ namespace SeleniumLogger
         {
             Byte[] info = 
                 new UTF8Encoding(true).GetBytes("This is to test the OpenWrite method.");
-
+ 
             // Add some information to the file.
             fs.Write(info, 0, info.Length);
         }
@@ -235,7 +237,7 @@ namespace SeleniumLogger
                             // handle IOException
                         }
                     });
-             */ 
+             */
             //-------------------------
             var autoResetEvent = new AutoResetEvent(false);
 
@@ -250,11 +252,11 @@ namespace SeleniumLogger
                         {
                             Screenshot();
                         }
-                        else
-                        {
-                            if (take_screenshot)
-                                Screenshot();
-                        }
+                        //else
+                        //{
+                        //    if (take_screenshot)
+                        //        Screenshot();
+                        //}
                         MessageSettings.MessageStr = msg;
                         string StrToWrite = MessageSettings.FormMessageString();
                         File.AppendAllText(_LogFilePath, StrToWrite + "\n");
@@ -372,7 +374,7 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Unindent(int Number)
         {
-            for (int i = 0; i < Math.Abs(Number); i++ )
+            for (int i = 0; i < Math.Abs(Number); i++)
             {
                 Unindent();
             }
@@ -392,7 +394,7 @@ namespace SeleniumLogger
             if (WriteNow)
             {
                 string StrToWrite = MessageSettings.FormMessageString();
-                 WriteLine(StrToWrite);
+                WriteLine(StrToWrite);
             }
         }
 
@@ -712,6 +714,7 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Screenshot(IWebDriver _driver = null)
         {
+
             try
             {
                 IWebDriver scrndriver = null;
@@ -725,9 +728,10 @@ namespace SeleniumLogger
                 try
                 {
                     string PICTURE_PATH = Config.ScreenshotsFolder + "/" + GetUniqueFilename("jpg");
-                    Screenshot ss = ((ITakesScreenshot)scrndriver).GetScreenshot();
-                    ss.SaveAsFile(PICTURE_PATH, ImageFormat.Jpeg);
-                    AttachPicture(PICTURE_PATH);
+                    TakeScreenshot(scrndriver, PICTURE_PATH);
+                    /*Screenshot ss = ((ITakesScreenshot)scrndriver).GetScreenshot();
+                    ss.SaveAsFile(PICTURE_PATH, ImageFormat.Jpeg);*/
+                    //AttachPicture(PICTURE_PATH);
                     MessageSettings.Image = PICTURE_PATH;
                 }
                 catch (Exception e)
@@ -743,13 +747,26 @@ namespace SeleniumLogger
             }
         }
 
+        private void TakeScreenshot(IWebDriver drv, string path)
+        {
+            Rectangle bounds = new Rectangle(drv.Manage().Window.Position, drv.Manage().Window.Size);
+            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                }
+                bitmap.Save(path, ImageFormat.Jpeg);
+            }
+        }
+
         /*
         static void Screenshot(IWebDriver driver)
         {
             SeleniumLog log = SeleniumLog.Instance();
             string folder = @"C:\Tmp\";
             string file = log.GetUniqueFilename();
-
+ 
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
             ss.SaveAsFile(folder + file, ImageFormat.Jpeg); //use any of the built in image formating
             //ss.ToString();
@@ -759,10 +776,10 @@ namespace SeleniumLogger
 
         public SeleniumLog Red()
         {
-            if (Config.ScreenshotOnEveryMessage)
-                Screenshot().RGB(255, 0, 0);
-            else
-                RGB(255, 0, 0);
+            //if (Config.ScreenshotOnEveryMessage)
+            //    Screenshot().RGB(255, 0, 0);
+            //else
+            RGB(255, 0, 0);
             return this;
         }
 
@@ -817,7 +834,7 @@ namespace SeleniumLogger
 
         public SeleniumLog Orange()
         {
-            RGB(250,97, 5);
+            RGB(250, 97, 5);
             return this;
         }
 

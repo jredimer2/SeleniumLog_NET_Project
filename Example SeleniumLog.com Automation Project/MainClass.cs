@@ -11,7 +11,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
-
+using System.Threading;
 
 namespace SeleniumTest
 {
@@ -156,7 +156,7 @@ namespace SeleniumTest
         private ContactUsPage Contact {get;set;}
 
         public TestCase() {
-            FirefoxDriver driver0 = new FirefoxDriver();
+            ChromeDriver driver0 = new ChromeDriver();
             driver = new SeleniumLogEventListener(driver0);
             Home = new HomePage(driver);
             Contact = new ContactUsPage(driver);
@@ -180,6 +180,8 @@ namespace SeleniumTest
 
             log.WriteLine("Step 3: Goto Contact Us page");
             Home.ContactUs.Click();
+
+            Thread.Sleep(2000);
 
             log.WriteLine("Step 4: Enter First Name");
             Contact.FirstName.SendKeys("James");

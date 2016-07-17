@@ -31,3 +31,14 @@ C:\GitHub\SeleniumLog for .NET 2\ExampleAsserts\bin\Debug\WebDriver.Support.xml
 C:\GitHub\SeleniumLog for .NET 2\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog for .NET 2\ExampleAsserts\obj\Debug\ExampleAsserts.dll
 C:\GitHub\SeleniumLog for .NET 2\ExampleAsserts\obj\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\obj\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog for .NET 3\ExampleAsserts\obj\Debug\ExampleAsserts.pdb
