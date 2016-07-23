@@ -174,7 +174,7 @@ namespace SeleniumLogger
                     {
                         Padding = Padding + pad;
                     }
-                    ReturnString2 = DateTime.Now.ToString(_TimestampFormat) + "	|	" + SimpleMessageType + "	| " + Padding + MessageString2;
+                    ReturnString2 = DateTime.Now.ToString(_TimestampFormat) + "   |   " + SimpleMessageType + "   |   " + Padding + MessageString2;
                     Padding = "";
                     return ReturnString2;
                 }

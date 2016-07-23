@@ -24,3 +24,11 @@ C:\GitHub\SeleniumLog for .NET 3\SeleniumLogExtension\bin\Release\WebDriver.Supp
 C:\GitHub\SeleniumLog for .NET 3\SeleniumLogExtension\obj\Release\SeleniumLogExtension.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog for .NET 3\SeleniumLogExtension\obj\Release\SeleniumLog.dll
 C:\GitHub\SeleniumLog for .NET 3\SeleniumLogExtension\obj\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\obj\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\obj\Release\SeleniumLog.pdb
