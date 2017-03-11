@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNull().
@@ -17,7 +18,7 @@ namespace SeleniumLogger
         /// <param name="value">The input object to be evaluated</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-         public bool IsNull(
+         public static bool IsNull(
 	        Object value,
             string message = ""
         ) 
@@ -32,7 +33,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " IsNull: Value [{0}]  - FAIL", value));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -46,7 +47,7 @@ namespace SeleniumLogger
          /// <param name="message">Optional message string displayed in the log</param>
          /// <param name="parameters">An array of parameters to use when formatting message.</param>
          /// <returns></returns>
-         public bool IsNull(
+         public static bool IsNull(
             Object value,
             string message = "",
             params Object[] parameters
@@ -62,7 +63,7 @@ namespace SeleniumLogger
              {
                  FailAssert(string.Format(message + " IsNull: Value [{0}]  - FAIL", value));
                  Result = false;
-                 if (Config.ForceThrowExceptionOnAssertFail) throw;
+                 if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                  return false;
              }
          }

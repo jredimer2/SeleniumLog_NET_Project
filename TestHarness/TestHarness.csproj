@@ -59,13 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="SeleniumLog.config">
+    <Content Include="SLConfig.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Example Automation of Dummy Airline Booking Project\Example Automation of Dummy Airline Booking Project.csproj">
+      <Project>{ec320ade-1d2a-4a46-ad64-73631e119952}</Project>
+      <Name>Example Automation of Dummy Airline Booking Project</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Example SeleniumLog.com Automation Project\Example SeleniumLog.com Automation Project.csproj">
       <Project>{b29be118-395b-48ed-926c-19ab089f9d01}</Project>
       <Name>Example SeleniumLog.com Automation Project</Name>

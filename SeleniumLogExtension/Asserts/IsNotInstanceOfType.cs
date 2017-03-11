@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotInstanceOfType().
@@ -18,7 +19,7 @@ namespace SeleniumLogger
         /// <param name="wrongType">The wrong type of value</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-         public bool IsNotInstanceOfType(
+         public static bool IsNotInstanceOfType(
 	        Object value,
 	        Type wrongType,
             string message = ""
@@ -34,7 +35,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " IsNotInstanceOfType: Value [{0}]   WrongType [{1}] - FAIL", value, wrongType));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -49,7 +50,7 @@ namespace SeleniumLogger
          /// <param name="message">Optional message string displayed in the log</param>
          /// <param name="parameters">An array of parameters to use when formatting message.</param>
          /// <returns></returns>
-         public bool IsNotInstanceOfType(
+         public static bool IsNotInstanceOfType(
             Object value,
             Type wrongType,
             string message = "",
@@ -66,7 +67,7 @@ namespace SeleniumLogger
              {
                  FailAssert(string.Format(message + " IsNotInstanceOfType: Value [{0}]   WrongType [{1}] - FAIL", value, wrongType));
                  Result = false;
-                 if (Config.ForceThrowExceptionOnAssertFail) throw;
+                 if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                  return false;
              }
          }

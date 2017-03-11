@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue().
@@ -17,7 +18,7 @@ namespace SeleniumLogger
         /// <param name="condition">The boolean input to be evaluated</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool IsTrue(
+        public static bool IsTrue(
            bool condition,
            string message = ""
        ) 
@@ -32,7 +33,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " IsTrue: Condition [{0}] - FAIL", condition));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -45,7 +46,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool IsTrue(
+        public static bool IsTrue(
             bool condition,
             string message = "",
             params Object[] parameters
@@ -61,7 +62,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " IsTrue: Condition [{0}] - FAIL", condition));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }

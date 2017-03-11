@@ -56,12 +56,7 @@ namespace ClassPropertyName
 
         static void Main(string[] args)
         {
-            TestClass test = new TestClass();
-            test.name = "Joseph Redimerio";
-            test.age = 25;
-            test.feedback = 5.00;
-            CallerEval(() => test.name, () => test.age, () => test.feedback);
-            Console.ReadLine();
+            
         }
     }
 }

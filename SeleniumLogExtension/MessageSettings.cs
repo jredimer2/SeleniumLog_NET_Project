@@ -18,10 +18,12 @@ namespace SeleniumLogger
             private bool _WatchdogEnd;
             private int _PrevLineNum;
             private int _LineNum;
+            private bool _Debug;
             private bool _Pass;
             private bool _Fail;
             private bool _Warning;
             private bool _Error;
+            private bool _Fatal;
             private int _PendingIndent;
             private int _PendingUnindent;
             private int _RunningIndentLevel;
@@ -65,10 +67,12 @@ namespace SeleniumLogger
             {
                 _WatchdogStart = false;
                 _WatchdogEnd = false;
+                _Debug = false;
                 _Pass = false;
                 _Fail = false;
                 _Warning = false;
                 _Error = false;
+                _Fatal = false;
                 _PendingIndent = 0;
                 _PendingUnindent = 0;
                 _Root = false;
@@ -106,6 +110,12 @@ namespace SeleniumLogger
                 set { _WatchdogEnd = value; }
             }
 
+            public bool Debug
+            {
+                get { return _Debug; }
+                set { _Debug = value; }
+            }
+
             public bool Pass
             {
                 get { return _Pass; }
@@ -128,6 +138,12 @@ namespace SeleniumLogger
             {
                 get { return _Error; }
                 set { _Error = value; }
+            }
+
+            public bool Fatal
+            {
+                get { return _Fatal; }
+                set { _Fatal = value; }
             }
 
             public int Indent

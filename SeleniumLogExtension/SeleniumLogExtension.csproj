@@ -65,6 +65,7 @@
     <Compile Include="Asserts\IsTrue.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="ExploreParameters.cs" />
+    <Compile Include="slAssert.cs" />
     <Compile Include="XmlConfigurationClass.cs" />
     <Compile Include="FormatMessageStr.cs" />
     <Compile Include="GetPendingLevel.cs" />

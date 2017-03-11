@@ -123,8 +123,8 @@ namespace SeleniumTest
             log.Indent();
 
             log.ResetResult();
-            log.AreNotEqual(notExpected: true, actual: IsExist(ErrorXPath), message: "Verify that Error message is not displayed");
-            log.AreEqual(expected: true, actual: IsExist(ThankYouXPath), message: "Verify that Thank You message is submitted");
+            slAssert.AreNotEqual(notExpected: true, actual: IsExist(ErrorXPath), message: "Verify that Error message is not displayed");
+            slAssert.AreEqual(expected: true, actual: IsExist(ThankYouXPath), message: "Verify that Thank You message is submitted");
             log.PublishResult(); //In case one of the above assert fails, it doesn't exist straight away
 
             log.RestoreIndent("Function 1");  //Ensures unindent back to correct level
@@ -141,8 +141,8 @@ namespace SeleniumTest
             log.Indent();            
 
             log.ResetResult();
-            log.AreEqual(expected: true, actual: IsExist(ErrorXPath), message: "Verify that Error message is displayed");
-            log.AreNotEqual(notExpected: true, actual: IsExist(ThankYouXPath), message: "Verify that Thank You message is not submitted");
+            slAssert.AreEqual(expected: true, actual: IsExist(ErrorXPath), message: "Verify that Error message is displayed");
+            slAssert.AreNotEqual(notExpected: true, actual: IsExist(ThankYouXPath), message: "Verify that Thank You message is not submitted");
             log.PublishResult(); //In case one of the above assert fails, it doesn't exist straight away
 
             log.RestoreIndent("Function 2");  //Ensures unindent back to correct level

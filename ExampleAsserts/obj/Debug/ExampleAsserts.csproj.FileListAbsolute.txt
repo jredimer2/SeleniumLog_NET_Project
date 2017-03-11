@@ -53,3 +53,14 @@ C:\GitHub\SeleniumLog for .NET 4\ExampleAsserts\bin\Debug\WebDriver.Support.xml
 C:\GitHub\SeleniumLog for .NET 4\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
 C:\GitHub\SeleniumLog for .NET 4\ExampleAsserts\obj\Debug\ExampleAsserts.dll
 C:\GitHub\SeleniumLog for .NET 4\ExampleAsserts\obj\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\ExampleAsserts.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\obj\Debug\ExampleAsserts.csprojResolveAssemblyReference.cache
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\obj\Debug\ExampleAsserts.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\ExampleAsserts\obj\Debug\ExampleAsserts.pdb

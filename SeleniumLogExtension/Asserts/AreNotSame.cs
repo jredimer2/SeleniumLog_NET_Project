@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotSame().
@@ -18,7 +19,7 @@ namespace SeleniumLogger
         /// <param name="actual">Actual object</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotSame(
+        public static bool AreNotSame(
             Object notExpected,
             Object actual,
             string message = ""
@@ -34,7 +35,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotSame: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -48,7 +49,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotSame(
+        public static bool AreNotSame(
             Object notExpected,
             Object actual,
             string message = "",
@@ -65,7 +66,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotSame: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }

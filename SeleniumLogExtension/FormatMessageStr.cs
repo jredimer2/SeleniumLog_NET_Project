@@ -23,7 +23,7 @@ namespace SeleniumLogger
                 string ReturnString = "";
                 string ReturnString2 = "";
                 string MessageString2 = "";
-                string SimpleMessageType = "INFO";
+                string SimpleMessageType = "INFO ";
                 string PathString = "";
                 string FormattingString = "";
                 XmlConfigurationClass config = XmlConfigurationClass.Instance();
@@ -41,25 +41,32 @@ namespace SeleniumLogger
                     Pass = false;
                 }
 
+                if (Debug == true)
+                {
+                    //MessageStack.Push("DEBUG");
+                    Debug = false;
+                    SimpleMessageType = "DEBUG";
+                }
+
                 if (Pass == true)
                 {
                     MessageStack.Push("PASS");
                     Pass = false;
-                    SimpleMessageType = "PASS";
+                    SimpleMessageType = "PASS ";
                 }
 
                 if (Fail == true)
                 {
                     MessageStack.Push("FAIL");
                     Fail = false;
-                    SimpleMessageType = "FAIL";
+                    SimpleMessageType = "FAIL ";
                 }
 
                 if (Warning == true)
                 {
                     MessageStack.Push("WARNING");
                     Warning = false;
-                    SimpleMessageType = "WARNING";
+                    SimpleMessageType = "WARN ";
                 }
 
                 if (Error == true)
@@ -67,6 +74,13 @@ namespace SeleniumLogger
                     MessageStack.Push("ERROR");
                     Error = false;
                     SimpleMessageType = "ERROR";
+                }
+
+                if (Fatal == true)
+                {
+                    MessageStack.Push("ERROR");
+                    Fatal = false;
+                    SimpleMessageType = "FATAL";
                 }
 
                 if (Indent > 0)

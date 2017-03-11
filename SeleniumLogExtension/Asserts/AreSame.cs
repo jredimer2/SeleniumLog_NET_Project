@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace SeleniumLogger
         /// <param name="actual">Actual object</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreSame(
+        public static bool AreSame(
             Object expected,
             Object actual,
             string message = ""
@@ -35,7 +36,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreSame: Expected [{0}]   Actual [{1}] - FAIL", expected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -49,7 +50,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreSame(
+        public static bool AreSame(
             Object expected,
             Object actual,
             string message = "",
@@ -66,7 +67,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreSame: Expected [{0}]   Actual [{1}] - FAIL", expected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }

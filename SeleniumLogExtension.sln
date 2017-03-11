@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleExploreTest", "Examp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleInstantiations", "ExampleInstantiations\ExampleInstantiations.csproj", "{DB5B89A2-CFAA-4FB2-ADD7-38143060CB62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Automation of Dummy Airline Booking Project", "Example Automation of Dummy Airline Booking Project\Example Automation of Dummy Airline Booking Project.csproj", "{EC320ADE-1D2A-4A46-AD64-73631E119952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{DB5B89A2-CFAA-4FB2-ADD7-38143060CB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB5B89A2-CFAA-4FB2-ADD7-38143060CB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB5B89A2-CFAA-4FB2-ADD7-38143060CB62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC320ADE-1D2A-4A46-AD64-73631E119952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC320ADE-1D2A-4A46-AD64-73631E119952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC320ADE-1D2A-4A46-AD64-73631E119952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC320ADE-1D2A-4A46-AD64-73631E119952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

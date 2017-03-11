@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.Inconclusive().
@@ -16,13 +17,13 @@ namespace SeleniumLogger
         /// </summary>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public void Inconclusive(
+        public static void Inconclusive(
             string message = ""
         ) 
         {
             Assert.Inconclusive(message: message);
-            Warning().WriteLine(string.Format(message + " Inconclusive assert."));
-            if (Config.ForceThrowExceptionOnAssertFail)  throw new AssertInconclusiveException();
+            log.Warning(string.Format(message + " Inconclusive assert."));
+            if (log.Config.ForceThrowExceptionOnAssertFail)  throw new AssertInconclusiveException();
         }
 
         /// <summary>
@@ -32,14 +33,14 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public void Inconclusive(
+        public static void Inconclusive(
             string message = "",
             params Object[] parameters
         )
         {
             Assert.Inconclusive(message: message, parameters: parameters);
-            Warning().WriteLine(string.Format(message + " Inconclusive assert."));
-            if (Config.ForceThrowExceptionOnAssertFail)  throw new AssertInconclusiveException();
+            log.Warning(string.Format(message + " Inconclusive assert."));
+            if (log.Config.ForceThrowExceptionOnAssertFail)  throw new AssertInconclusiveException();
         }
 
 

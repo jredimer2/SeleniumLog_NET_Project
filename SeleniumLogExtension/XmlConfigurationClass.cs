@@ -22,11 +22,22 @@ namespace XMLConfig
         public string SeleniumLogDesktopInstallationFolder { get; set; }
 
         public string ScreenshotsFolder { get; set; }
+        public bool UseFastScreenshot { get; set; }
         public bool TakeScreenshotOnEveryWriteline { get; set; }
+        public bool TakeScreenshotOnEveryInfo { get; set; }
+        public bool TakeScreenshotOnEveryInfo2 { get; set; }
+        public bool TakeScreenshotOnEveryDebug { get; set; }
+        public bool TakeScreenshotOnEveryDebug2 { get; set; }
         public bool TakeScreenshotOnEveryPass { get; set; }
+        public bool TakeScreenshotOnEveryPass2 { get; set; }
         public bool TakeScreenshotOnEveryFail { get; set; }
+        public bool TakeScreenshotOnEveryFail2 { get; set; }
         public bool TakeScreenshotOnEveryError { get; set; }
+        public bool TakeScreenshotOnEveryError2 { get; set; }
         public bool TakeScreenshotOnEveryWarning { get; set; }
+        public bool TakeScreenshotOnEveryWarning2 { get; set; }
+        public bool TakeScreenshotOnEveryFatal { get; set; }
+        public bool TakeScreenshotOnEveryFatal2 { get; set; }
         public bool TakeScreenshotOnEveryException { get; set; }
 
         public bool ForceThrowExceptionOnAssertFail { get; set; }
@@ -121,7 +132,7 @@ namespace XMLConfig
         private void ParseXML(bool debug = false)
         {
 
-            XPathDocument xmlPathDoc = new XPathDocument("SeleniumLog.config");
+            XPathDocument xmlPathDoc = new XPathDocument("SLConfig.xml");
             XPathNavigator xNav = xmlPathDoc.CreateNavigator();
 
             xNav.MoveToRoot();
@@ -208,24 +219,68 @@ namespace XMLConfig
                                     ScreenshotsFolder = xNav.Value;
                                     break;
 
+                                case "Use fast screenshot":
+                                    UseFastScreenshot = TrueOrFalse("Use fast screenshot", xNav.Value);
+                                    break;
+
                                 case "Take screenshot on every log.WriteLine()":
                                     TakeScreenshotOnEveryWriteline = TrueOrFalse("Take screenshot on every log.WriteLine()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Info()":
+                                    TakeScreenshotOnEveryInfo = TrueOrFalse("Take screenshot on every log.Info()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Info2()":
+                                    TakeScreenshotOnEveryInfo2 = TrueOrFalse("Take screenshot on every log.Info2()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Debug()":
+                                    TakeScreenshotOnEveryDebug = TrueOrFalse("Take screenshot on every log.Debug()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Debug2()":
+                                    TakeScreenshotOnEveryDebug2 = TrueOrFalse("Take screenshot on every log.Debug2()", xNav.Value);
                                     break;
 
                                 case "Take screenshot on every log.Pass()":
                                     TakeScreenshotOnEveryPass = TrueOrFalse("Take screenshot on every log.Pass()", xNav.Value);
                                     break;
 
+                                case "Take screenshot on every log.Pass2()":
+                                    TakeScreenshotOnEveryPass2 = TrueOrFalse("Take screenshot on every log.Pass2()", xNav.Value);
+                                    break;
+
                                 case "Take screenshot on every log.Fail()":
                                     TakeScreenshotOnEveryFail = TrueOrFalse("Take screenshot on every log.Fail()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Fail2()":
+                                    TakeScreenshotOnEveryFail2 = TrueOrFalse("Take screenshot on every log.Fail2()", xNav.Value);
                                     break;
 
                                 case "Take screenshot on every log.Error()":
                                     TakeScreenshotOnEveryError = TrueOrFalse("Take screenshot on every log.Error()", xNav.Value);
                                     break;
 
+                                case "Take screenshot on every log.Error2()":
+                                    TakeScreenshotOnEveryError2 = TrueOrFalse("Take screenshot on every log.Error2()", xNav.Value);
+                                    break;
+
                                 case "Take screenshot on every log.Warning()":
                                     TakeScreenshotOnEveryWarning = TrueOrFalse("Take screenshot on every log.Warning()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Warning2()":
+                                    TakeScreenshotOnEveryWarning2 = TrueOrFalse("Take screenshot on every log.Warning2()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Fatal()":
+                                    TakeScreenshotOnEveryFatal = TrueOrFalse("Take screenshot on every log.Fatal()", xNav.Value);
+                                    break;
+
+                                case "Take screenshot on every log.Fatal2()":
+                                    TakeScreenshotOnEveryFatal2 = TrueOrFalse("Take screenshot on every log.Fatal2()", xNav.Value);
                                     break;
 
                                 case "Take screenshot on every Exception":

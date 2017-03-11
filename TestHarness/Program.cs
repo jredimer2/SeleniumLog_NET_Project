@@ -11,6 +11,7 @@ using System.Collections;
 using SeleniumTest;
 using ExampleAsserts;
 using ExampleExplore;
+using Example_Automation_of_Dummy_Airline_Booking_Project;
 
 namespace TestHarness
 {
@@ -85,13 +86,23 @@ namespace TestHarness
 
         static void Main(string[] args)
         {
-            SeleniumLog log = SeleniumLog.Instance();
 
-           TestCase test = new TestCase();
-           test.Run();
-            //TestIndentations_Java_1();
-            //TestIndentations();
-            //TestSimpleText();
+            DUMMYSITE_TEST_CASES tests = new DUMMYSITE_TEST_CASES();
+            tests.TestCase1();
+            tests.TestCase2();
+            tests.TestCase3();
+            
+
+            //ExampleAssertTests assert_test = new ExampleAssertTests();
+            //assert_test.Test1();
+            SeleniumLog log = SeleniumLog.Instance();
+            log.Info("Test info");
+            log.Warning("Test warning");
+            log.Pass("Test pass");
+            log.Fail("Test fail");
+            log.Debug("Test debug");
+
+
             
  
 

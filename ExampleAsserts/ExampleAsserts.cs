@@ -14,16 +14,45 @@ namespace ExampleAsserts
         public void Test1() {
 
             SeleniumLog log = SeleniumLog.Instance();
-            int test = 3;
+            float test = 3.2f;
 
             //Check if it matches any of the numbers
-            log.ResetResult();
-            log.AreEqual(1, test);  
-            log.AreEqual(2, test);
-            log.AreEqual(3, test);
-            log.AreEqual(4, test);
-            log.AreEqual(5, test);
-            log.PublishResult();   //You can choose when to evaluate the test and exit the test, so all comparisons above will be made and logged.
+            try
+            {
+                log.Path("AreEual");
+                slAssert.ResetResult();
+                slAssert.AreEqual(1.0f, 1.5f, 0.0f);
+                slAssert.AreEqual(1.1f, 3.5f, 0.0f);
+                slAssert.AreEqual(3.0f, 2.5f, 1.0f);
+                slAssert.AreEqual(1.0f, 1.5f, 0.7f);
+                slAssert.AreEqual(1.0f, 1.5f, 0.0f);
+                slAssert.PublishResult();   //You can choose when to evaluate the test and exit the test, so all comparisons above will be made and logged.
+                log.Pass("AreEqual test cases passed");
+            }
+            catch (Exception e)
+            {
+                log.Fail("Are equal test cases failed");            
+            }
+
+            try
+            {
+                
+                log.Path("AreNotEual");
+                slAssert.ResetResult();
+                slAssert.AreNotEqual(1.0f, 1.5f, 0.0f);
+                slAssert.AreNotEqual(1.1f, 3.5f, 0.0f);
+                slAssert.AreNotEqual(3.0f, 2.5f, 1.0f);
+                slAssert.AreNotEqual(1.0f, 1.5f, 0.7f);
+                slAssert.AreNotEqual(1.0f, 1.5f, 0.0f);
+                slAssert.PublishResult();   //You can choose when to evaluate the test and exit the test, so all comparisons above will be made and logged.
+                log.Pass("AreNotEqual test cases passed");
+                 
+            }
+            catch 
+            {
+                log.Fail("AreNotEequal test cases failed");
+            }
+
         }
     }
 }

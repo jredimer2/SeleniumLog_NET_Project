@@ -32,3 +32,12 @@ C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.xml
 C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\bin\Release\WebDriver.Support.xml
 C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\obj\Release\SeleniumLog.dll
 C:\GitHub\SeleniumLog for .NET 4\SeleniumLogExtension\obj\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Release\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Release\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Release\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Release\SeleniumLogExtension.csprojResolveAssemblyReference.cache

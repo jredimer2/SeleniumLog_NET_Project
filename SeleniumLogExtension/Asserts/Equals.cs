@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
         /// <summary>
         /// Wrapper to Microsoft.VisualStudio.TestTools.UnitTesting.Assert.Equals().
@@ -18,7 +19,7 @@ namespace SeleniumLogger
         /// <param name="objB">Second comparison object</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool Equals(
+        public static bool Equals(
 	        Object objA,
 	        Object objB,
             string message = ""
@@ -34,7 +35,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " Equals: objA [{0}]   objB [{1}] - FAIL", objA, objB));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }

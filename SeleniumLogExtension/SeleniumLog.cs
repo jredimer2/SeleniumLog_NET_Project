@@ -65,18 +65,12 @@ namespace SeleniumLogger
         private int PendingIndentLevel { get { return MessageSettings.GetPendingLevel(); } }
 
         private List<int> wdlist = new List<int>();
-        private IWebDriver driver;
+        public IWebDriver driver;
         //public _Config Config = new _Config();
         public XmlConfigurationClass Config = XmlConfigurationClass.Instance();
 
         private SeleniumLog(IWebDriver webdriver = null, bool overwrite = false, bool debug = false)
         {
-
-            //string name = webdriver.GetType().FullName;
-
-            //Console.WriteLine("output_file_path : " + Config.OutputFilePath);
-            //Console.ReadLine();
-
             if (webdriver != null)
             {
                 driver = webdriver;
@@ -86,18 +80,9 @@ namespace SeleniumLogger
                 driver = null;
             }
 
-            //ParseXML();
-
-            //if ((LogFilePath == null) || (LogFilePath == ""))  // Prevent log redirected to a new file if filepath has already been declared by previous instance.
-            {
-
-            }
-            //else if (((LogFilePath != null) || (LogFilePath != "")) && (_FileCreated == false))
             if (overwrite == true)
             {
-                //_LogFilePath = LogFilePath;
                 _LogFilePath = Config.LogFilePath;
-                //MessageSettings = new _MessageSettings();
                 NewFile();
                 Thread.Sleep(500);
                 if (overwrite)
@@ -222,7 +207,7 @@ namespace SeleniumLogger
         /// Write msg string to file.
         /// </summary>
         /// <param name="msg"></param>
-        public void WriteLine(string msg, bool take_screenshot = false)
+        private void WriteLine(bool TakeScreenshots, string msg, bool take_screenshot = false )
         {
             /*
             FileLocker.Lock(@"c:\file",
@@ -248,7 +233,7 @@ namespace SeleniumLogger
                 {
                     if (MessageSettings.EnableLogging)
                     {
-                        if (Config.TakeScreenshotOnEveryWriteline)
+                        if (TakeScreenshots || take_screenshot)
                         {
                             Screenshot();
                         }
@@ -284,6 +269,153 @@ namespace SeleniumLogger
                         };
                 }
             }
+        }
+
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void WriteLine(string msg, bool take_screenshot = false)
+        {
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryWriteline);
+        }
+
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Info(string msg, bool take_screenshot = false)
+        {
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryInfo);
+        }
+
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Info2(string msg, bool take_screenshot = false)
+        {
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryInfo2);
+        }
+
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Debug(string msg, bool take_screenshot = false)
+        {
+            Debug();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryDebug);
+        }
+
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Debug2(string msg, bool take_screenshot = false)
+        {
+            Debug();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryDebug2);
+        }
+        /// <summary>
+        /// Write msg string to file.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Pass(string msg, bool take_screenshot = false)
+        {
+            Pass();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryPass);
+        }
+        /// <summary>
+        /// Write msg string to file with a PASS icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Pass2(string msg, bool take_screenshot = false)
+        {
+            Pass();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryPass2);
+        }
+
+        /// <summary>
+        /// Write msg string to file with a FAIL icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Fail(string msg, bool take_screenshot = false)
+        {
+            Fail();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryFail);
+        }
+
+        /// <summary>
+        /// Write msg string to file with a FAIL icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Fail2(string msg, bool take_screenshot = false)
+        {
+            Fail();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryFail2);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith an ERROR icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Error(string msg, bool take_screenshot = false)
+        {
+            Error();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryError);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith an ERROR icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Error2(string msg, bool take_screenshot = false)
+        {
+            Error();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryError2);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith an ERROR icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Fatal(string msg, bool take_screenshot = false)
+        {
+            Red().Fatal();
+            if (Config.RichTextOutput)
+                msg = "FATAL - " + msg;
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryFatal);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith an ERROR icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Fatal2(string msg, bool take_screenshot = false)
+        {
+            Red().Fatal();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryFatal2);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith a WARNING icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Warning(string msg, bool take_screenshot = false)
+        {
+            Warning();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryWarning);
+        }
+
+        /// <summary>
+        /// Write msg string to filewith a WARNING icon.
+        /// </summary>
+        /// <param name="msg"></param>
+        public void Warning2(string msg, bool take_screenshot = false)
+        {
+            Warning();
+            WriteLine(msg: msg, take_screenshot: take_screenshot, TakeScreenshots: Config.TakeScreenshotOnEveryWarning2);
         }
 
         /// <summary>
@@ -446,7 +578,7 @@ namespace SeleniumLogger
         /// Initiate watchdog feature.
         /// </summary>
         /// <returns></returns>
-        private SeleniumLog WatchdogStart()
+        public SeleniumLog WatchdogStart()
         {
             MessageSettings.WatchdogStart = true;
             bool containsItem = wdlist.Any(item => item == MessageSettings.CurrentIndentLevel);
@@ -466,7 +598,7 @@ namespace SeleniumLogger
         /// </summary>
         /// <param name="WriteNow">Set to true to write message buffer to the file now.</param>
         /// <returns></returns>
-        private SeleniumLog WatchdogStart(bool WriteNow)
+        public SeleniumLog WatchdogStart(bool WriteNow)
         {
             MessageSettings.WatchdogStart = true;
 
@@ -487,7 +619,7 @@ namespace SeleniumLogger
         /// Terminate current watchdog which was previously initiated by WatchdogStart.
         /// </summary>
         /// <returns></returns>
-        private SeleniumLog WatchdogEnd()
+        public SeleniumLog WatchdogEnd()
         {
             MessageSettings.WatchdogEnd = true;
             bool containsItem = wdlist.Any(item => item == MessageSettings.CurrentIndentLevel);
@@ -507,7 +639,7 @@ namespace SeleniumLogger
         /// </summary>
         /// <param name="WriteNow">Set to true to write message buffer to the file now.</param>
         /// <returns>SeleniumLog object</returns>
-        private SeleniumLog WatchdogEnd(bool WriteNow)
+        public SeleniumLog WatchdogEnd(bool WriteNow)
         {
             MessageSettings.WatchdogEnd = true;
 
@@ -528,10 +660,19 @@ namespace SeleniumLogger
         /// Pass the step.
         /// </summary>
         /// <returns></returns>
+        public SeleniumLog Debug()
+        {
+            Gray();
+            MessageSettings.Debug = true;
+            return this;
+        }
+
+        /// <summary>
+        /// Pass the step.
+        /// </summary>
+        /// <returns></returns>
         public SeleniumLog Pass()
         {
-            if (Config.TakeScreenshotOnEveryPass)
-                Screenshot();
             Green();
             MessageSettings.Pass = true;
             return this;
@@ -543,8 +684,6 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Fail()
         {
-            if (Config.TakeScreenshotOnEveryFail)
-                Screenshot();
             Red();
             MessageSettings.Fail = true;
             return this;
@@ -557,8 +696,6 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Warning()
         {
-            if (Config.TakeScreenshotOnEveryWarning)
-                Screenshot();
             MessageSettings.Warning = true;
             return this;
         }
@@ -570,9 +707,17 @@ namespace SeleniumLogger
         /// <returns></returns>
         public SeleniumLog Error()
         {
-            if (Config.TakeScreenshotOnEveryError)
-                Screenshot();
             MessageSettings.Error = true;
+            return this;
+        }
+
+        /// <summary>
+        /// Put an error icon on the step in red fonts.
+        /// </summary>
+        /// <returns></returns>
+        public SeleniumLog Fatal()
+        {
+            MessageSettings.Fatal = true;
             return this;
         }
 
@@ -728,10 +873,16 @@ namespace SeleniumLogger
                 try
                 {
                     string PICTURE_PATH = Config.ScreenshotsFolder + "/" + GetUniqueFilename("jpg");
-                    TakeScreenshot(scrndriver, PICTURE_PATH);
-                    /*Screenshot ss = ((ITakesScreenshot)scrndriver).GetScreenshot();
-                    ss.SaveAsFile(PICTURE_PATH, ImageFormat.Jpeg);*/
-                    //AttachPicture(PICTURE_PATH);
+
+                    if (Config.UseFastScreenshot)
+                    {
+                        TakeScreenshot(scrndriver, PICTURE_PATH);
+                    }
+                    else
+                    {
+                        Screenshot ss = ((ITakesScreenshot)scrndriver).GetScreenshot();
+                        ss.SaveAsFile(PICTURE_PATH, ImageFormat.Jpeg);
+                    }
                     MessageSettings.Image = PICTURE_PATH;
                 }
                 catch (Exception e)
@@ -801,7 +952,7 @@ namespace SeleniumLogger
 
         public SeleniumLog Blue()
         {
-            RGB(0, 0, 250);
+            RGB(0, 0, 255);
             return this;
         }
 

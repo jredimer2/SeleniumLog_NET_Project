@@ -8,7 +8,8 @@ using System.Globalization;
 
 namespace SeleniumLogger
 {
-    public sealed partial class SeleniumLog
+    //public sealed partial class SeleniumLog
+    public static partial class slAssert
     {
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace SeleniumLogger
         /// <param name="actual">Actual object</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             Object notExpected,
             Object actual,
             string message = ""
@@ -35,7 +36,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -49,7 +50,7 @@ namespace SeleniumLogger
         /// <param name="delta">Tolerance value</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             double notExpected,
             double actual,
             double delta,
@@ -66,7 +67,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}]   Delta [{2}] - FAIL", notExpected, actual, delta));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -80,7 +81,7 @@ namespace SeleniumLogger
         /// <param name="delta">Tolerance value</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             float notExpected,
             float actual,
             float delta,
@@ -97,7 +98,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}]   Delta [{2}] - FAIL", notExpected, actual, delta));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -111,7 +112,7 @@ namespace SeleniumLogger
         /// <param name="ignoreCase">Set to true to ignore case in string comparison.</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
 	        string notExpected,
 	        string actual,
 	        bool ignoreCase,
@@ -128,7 +129,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -142,7 +143,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             Object notExpected,
             Object actual,
             string message = "",           
@@ -159,7 +160,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -174,7 +175,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             double notExpected,
             double actual,
             double delta,
@@ -192,7 +193,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}]   Delta [{2}] - FAIL", notExpected, actual, delta));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -207,7 +208,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             float notExpected,
             float actual,
             float delta,
@@ -225,7 +226,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}]   Delta [{2}] - FAIL", notExpected, actual, delta));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -240,7 +241,7 @@ namespace SeleniumLogger
         /// <param name="culture">A CultureInfo object that supplies culture-specific comparison information.</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
 	        string notExpected,
 	        string actual,
 	        bool ignoreCase,
@@ -258,7 +259,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -273,7 +274,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             string notExpected,
             string actual,
             bool ignoreCase,
@@ -291,7 +292,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -307,7 +308,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual(
+        public static bool AreNotEqual(
             string notExpected,
             string actual,
             bool ignoreCase,
@@ -326,7 +327,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -339,7 +340,7 @@ namespace SeleniumLogger
         /// <param name="actual">Actual generic data type</param>
         /// <param name="message">Optional message string displayed in the log</param>
         /// <returns></returns>
-        public bool AreNotEqual<T>(
+        public static bool AreNotEqual<T>(
 	        T notExpected,
 	        T actual,
             string message = ""
@@ -355,7 +356,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
@@ -370,7 +371,7 @@ namespace SeleniumLogger
         /// <param name="message">Optional message string displayed in the log</param>
         /// <param name="parameters">An array of parameters to use when formatting message.</param>
         /// <returns></returns>
-        public bool AreNotEqual<T>(
+        public static bool AreNotEqual<T>(
             T notExpected,
             T actual,
             string message = "",           
@@ -387,7 +388,7 @@ namespace SeleniumLogger
             {
                 FailAssert(string.Format(message + " AreNotEqual: Input1 [{0}]   Input2 [{1}] - FAIL", notExpected, actual));
                 Result = false;
-                if (Config.ForceThrowExceptionOnAssertFail) throw;
+                if (log.Config.ForceThrowExceptionOnAssertFail) throw;
                 return false;
             }
         }
