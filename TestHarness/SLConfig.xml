@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+  <!--
+  NOTE: To output in SeleniumLog Viewer format set 'Rich text output' to 'Yes'. Setting to 'No' will output in Simple text output which can be viewed in Notepad.
+        "Rich text output" is only viewable using SeleniumLog Viewer application (download from seleniumlog.com) 
+        
+  RICH TEXT OUTPUT FEATURES (SeleniumLog Viewer format):
+      - Colored fonts, tree structure, screenshot attachment on every step, file attachment on every step
+      - SeleniumLog Viewer displays results in real-time and over the network
+      - Test results automatically aggregated and propagated up the result tree in SeleniumLog Viewer display
+   -->
+  
+  <general option="Enable SeleniumLog">yes</general>
+  <general option="Rich text output">yes</general> <!--Note: Setting to Yes will require output log to be viewed using SeleniumLog Viewer (download at seleniumlog.com) -->
+  <general option="Timestamp format">dd-MMM-yy H:mm:ss</general>  <!--  Please refer to Microsoft Custom Date and Time Format Strings  http://tinyurl.com/zgsj4sk  -->
+  <general option="Log file path">C:/tmp/log5.txt</general>
+  <general option="Write line numbers">true</general>
+  
+  <display_system option="Auto-launch SeleniumLog Viewer">false</display_system>
+  <display_system option="SeleniumLog Viewer Installation Folder">C:\Program Files (x86)\SeleniumLog Viewer</display_system>
+
+  <!--NOTE: Screenshots are only possible when "Rich text output" option above is set to Yes. -->
+  <auto_screenshot option="Screenshots folder">C:/tmp/screenshots</auto_screenshot>
+  <auto_screenshot option="Use fast screenshot">No</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.WriteLine()">Yes</auto_screenshot> 
+  <auto_screenshot option="Take screenshot on every log.Info()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Info2()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Debug()">yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Debug2()">No</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Pass()">yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Pass2()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Fail()">No</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Fail2()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Error()">yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Error2()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Warning()">No</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Warning2()">Yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Fatal()">yes</auto_screenshot>
+  <auto_screenshot option="Take screenshot on every log.Fatal2()">Yes</auto_screenshot>
+
+  <!--NOTE: Set 'Force throw exception when assert fails' to "false" to stop failed asserts from throwing exception, 
+            so your test can continue running the rest of the steps. -->
+  <asserts option="Force throw exception when assert fails">no</asserts>
+
+  <!--NOTE: Set 'Enable Logging of low-level Selenium Webdriver Events' to "true" to enable Seleniumg Webdriver event listener. 
+            Setting to true also provides instant logging, without you having to write a single line of logging code. -->
+  <selenium_events option="Enable Logging of low-level Selenium Webdriver Events">YES</selenium_events>
+  
+  <selenium_events option="OnNavigating : log before event">true</selenium_events>
+  <selenium_events option="OnNavigating : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnNavigating : log after event">true</selenium_events>
+  <selenium_events option="OnNavigating : take screenshot after event">true</selenium_events>  
+
+  <selenium_events option="OnNavigatingForward : log before event">true</selenium_events>
+  <selenium_events option="OnNavigatingForward : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnNavigatingForward : log after event">true</selenium_events>
+  <selenium_events option="OnNavigatingForward : take screenshot after event">true</selenium_events>  
+
+  <selenium_events option="OnNavigatingBack : log before event">true</selenium_events>
+  <selenium_events option="OnNavigatingBack : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnNavigatingBack : log after event">true</selenium_events>
+  <selenium_events option="OnNavigatingBack : take screenshot after event">true</selenium_events>  
+
+  <selenium_events option="OnClick : log before event">true</selenium_events>
+  <selenium_events option="OnClick : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnClick : log after event">true</selenium_events>
+  <selenium_events option="OnClick : take screenshot after event">true</selenium_events>
+  
+  <selenium_events option="OnChangeValue : log before event">true</selenium_events>
+  <selenium_events option="OnChangeValue : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnChangeValue : log after event">true</selenium_events>
+  <selenium_events option="OnChangeValue : take screenshot after event">true</selenium_events>
+  
+  <selenium_events option="OnFindElement : log before event">true</selenium_events>
+  <selenium_events option="OnFindElement : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnFindElement : log after event">true</selenium_events>
+  <selenium_events option="OnFindElement : take screenshot after event">true</selenium_events>
+  
+  <selenium_events option="OnScriptExecute : log before event">true</selenium_events>
+  <selenium_events option="OnScriptExecute : take screenshot before event">true</selenium_events>
+  <selenium_events option="OnScriptExecute : log after event">true</selenium_events>
+  <selenium_events option="OnScriptExecute : take screenshot after event">true</selenium_events>
+
+  <selenium_events option="OnWebdriverExceptionThrown : log event">true</selenium_events>
+  
+</configuration>
