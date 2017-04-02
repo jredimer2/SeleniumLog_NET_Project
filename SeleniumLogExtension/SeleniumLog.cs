@@ -99,7 +99,7 @@ namespace SeleniumLogger
             if (Config.AutoLaunchSeleniumLogDesktop)
             {
                 Process logger = new Process();
-                logger.StartInfo.FileName = Config.SeleniumLogAppInstallationFolder + @"\SeleniumLog Desktop.exe";
+                logger.StartInfo.FileName = Config.SeleniumLogAppInstallationFolder + @"\SeleniumLog Viewer.exe";
                 logger.StartInfo.Arguments = Config.LogFilePath;
                 logger.Start();
             }
