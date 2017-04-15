@@ -12,17 +12,23 @@
    -->
   
   <general option="Enable SeleniumLog">yes</general>
-  <general option="Rich text output">yes</general> <!--Note: Setting to Yes will require output log to be viewed using SeleniumLog Viewer (download at seleniumlog.com) -->
+  <!--<general option="Rich text output">yes</general>--> <!--Note: Setting to Yes will require output log to be viewed using SeleniumLog Viewer (download at seleniumlog.com) -->
+  
+  <output_format option="console">yes</output_format> 
+  <output_format option="text" filepath="C:/tmp/log5.txt">yes</output_format> 
+  <output_format option="seleniumlog.viewer" filepath="C:/tmp/log7.txt" screenshots_folder="C:/tmp/screenshots">true</output_format> 
+ 
+  
   <general option="Timestamp format">dd-MMM-yy H:mm:ss</general>  <!--  Please refer to Microsoft Custom Date and Time Format Strings  http://tinyurl.com/zgsj4sk  -->
-  <general option="Log file path">C:/tmp/log5.txt</general>
+  <!--<general option="Log file path">C:/tmp/log5.txt</general>-->
   <general option="Write line numbers">true</general>
   
   <display_system option="Auto-launch SeleniumLog Viewer">false</display_system>
   <display_system option="SeleniumLog Viewer Installation Folder">C:\Program Files (x86)\SeleniumLog Viewer</display_system>
 
   <!--NOTE: Screenshots are only possible when "Rich text output" option above is set to Yes. -->
-  <auto_screenshot option="Screenshots folder">C:/tmp/screenshots</auto_screenshot>
-  <auto_screenshot option="Use fast screenshot">No</auto_screenshot>
+  <!--<auto_screenshot option="Screenshots folder">C:/tmp/screenshots</auto_screenshot>-->
+  <auto_screenshot option="Use fast screenshot">no</auto_screenshot>
   <auto_screenshot option="Take screenshot on every log.WriteLine()">Yes</auto_screenshot> 
   <auto_screenshot option="Take screenshot on every log.Info()">Yes</auto_screenshot>
   <auto_screenshot option="Take screenshot on every log.Info2()">Yes</auto_screenshot>
@@ -45,7 +51,7 @@
 
   <!--NOTE: Set 'Enable Logging of low-level Selenium Webdriver Events' to "true" to enable Seleniumg Webdriver event listener. 
             Setting to true also provides instant logging, without you having to write a single line of logging code. -->
-  <selenium_events option="Enable Logging of low-level Selenium Webdriver Events">YES</selenium_events>
+  <selenium_events option="Enable Logging of low-level Selenium Webdriver Events">yes</selenium_events>
   
   <selenium_events option="OnNavigating : log before event">true</selenium_events>
   <selenium_events option="OnNavigating : take screenshot before event">true</selenium_events>

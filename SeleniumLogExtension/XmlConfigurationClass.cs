@@ -13,15 +13,22 @@ namespace XMLConfig
     public sealed class XmlConfigurationClass
     {
         public bool EnableSeleniumLog { get; set; }
-        public bool RichTextOutput { get; set; }
+        //public bool RichTextOutput { get; set; }
         public string TimestampFormat { get; set; }
-        public string LogFilePath { get; set; }
+        //public string LogFilePath { get; set; }
         public bool WriteLineNumbers { get; set; }
+
+        public bool OutputFormatConsole { get; set; }
+        public bool OutputFormatText { get; set; }
+        public string OutputFormatText_Filepath { get; set; }
+        public bool OutputFormatSeleniumLogViewer { get; set; }
+        public string OutputFormatSeleniumLogViewer_Filepath { get; set; }
+        public string OutputFormatSeleniumLogViewer_Screenshots { get; set; }
 
         public bool AutoLaunchSeleniumLogDesktop { get; set; }
         public string SeleniumLogDesktopInstallationFolder { get; set; }
 
-        public string ScreenshotsFolder { get; set; }
+        //public string ScreenshotsFolder { get; set; }
         public bool UseFastScreenshot { get; set; }
         public bool TakeScreenshotOnEveryWriteline { get; set; }
         public bool TakeScreenshotOnEveryInfo { get; set; }
@@ -182,21 +189,21 @@ namespace XMLConfig
                                     EnableSeleniumLog = TrueOrFalse("Enable SeleniumLog", xNav.Value);
                                     break;
 
-                                case "Rich text output":
-                                    RichTextOutput = TrueOrFalse("Rich text output", xNav.Value);
-                                    break;
+                                //case "Rich text output":
+                                //    RichTextOutput = TrueOrFalse("Rich text output", xNav.Value);
+                                //    break;
 
                                 case "Timestamp format":
                                     TimestampFormat = xNav.Value;
                                     break;
 
-                                case "Log file path":
-                                    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value))) {
-                                        MessageBox.Show("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
-                                        throw new Exception("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
-                                    }
-                                    LogFilePath = xNav.Value;
-                                    break;
+                                //case "Log file path":
+                                //    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value))) {
+                                //        MessageBox.Show("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
+                                //        throw new Exception("ERROR: Log file path '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Log file path' property with a folder path that exists.");
+                               //     }
+                               //     LogFilePath = xNav.Value;
+                               //     break;
 
                                 case "Write line numbers":
                                     WriteLineNumbers = TrueOrFalse("Write line numbers", xNav.Value);
@@ -206,18 +213,33 @@ namespace XMLConfig
                                     AutoLaunchSeleniumLogDesktop = TrueOrFalse("Auto-launch SeleniumLog Viewer", xNav.Value);
                                     break;
 
+                                case "console":
+                                    OutputFormatConsole = TrueOrFalse("console", xNav.Value);
+                                    break;
+
+                                case "text":
+                                    OutputFormatText = TrueOrFalse("text", xNav.Value);
+                                    OutputFormatText_Filepath = xNav.GetAttribute("filepath", "");
+                                    break;
+
+                                case "seleniumlog.viewer":
+                                    OutputFormatSeleniumLogViewer = TrueOrFalse("seleniumlog.viewer", xNav.Value);
+                                    OutputFormatSeleniumLogViewer_Filepath = xNav.GetAttribute("filepath", "");
+                                    OutputFormatSeleniumLogViewer_Screenshots = xNav.GetAttribute("screenshots_folder", "");
+                                    break;
+
                                 case "SeleniumLog Viewer Installation Folder":
                                     SeleniumLogAppInstallationFolder = xNav.Value;
                                     break;
 
-                                case "Screenshots folder":
-                                    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value)))
-                                    {
-                                        MessageBox.Show("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
-                                        throw new Exception("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
-                                    }
-                                    ScreenshotsFolder = xNav.Value;
-                                    break;
+                                //case "Screenshots folder":
+                                //    if (!Directory.Exists(Path.GetDirectoryName(xNav.Value)))
+                                //    {
+                                //        MessageBox.Show("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
+                                //        throw new Exception("ERROR: Screenshots folder '" + xNav.Value + "' folder does not exist or you do not have write permission. Exiting. Please update SeleniumgLog.config file's 'Screenshots folder' property with a folder path that exists.");
+                                //    }
+                                //    ScreenshotsFolder = xNav.Value;
+                                //    break;
 
                                 case "Use fast screenshot":
                                     UseFastScreenshot = TrueOrFalse("Use fast screenshot", xNav.Value);
@@ -474,13 +496,13 @@ namespace XMLConfig
                                     ExceptionMessageBuffer = xNav.Name;
                                     TimestampFormat = xNav.Value;
                                     break;
-                                case "output_file_path":
-                                    ExceptionMessageBuffer = xNav.Name;
-                                    OutputFilePath = xNav.Value;
-                                    break;
-                                case "screenshots_folder":
-                                    ExceptionMessageBuffer = xNav.Name;
-                                    ScreenshotsFolder = xNav.Value;
+                                //case "output_file_path":
+                                //    ExceptionMessageBuffer = xNav.Name;
+                                //    OutputFilePath = xNav.Value;
+                                //    break;
+                                //case "screenshots_folder":
+                                //    ExceptionMessageBuffer = xNav.Name;
+                                //    ScreenshotsFolder = xNav.Value;
                                     break;
                                 case "screenshot_on_writeline":
                                     ExceptionMessageBuffer = xNav.Name;

@@ -27,7 +27,7 @@ namespace SeleniumLogger
             printParameters.PrintValues(arg, comment);
             log.RestoreIndent("ExploreParams");
             //log.MessageSettings.indentModel.SimulateIndentations(MessageSettings.MessageStr);
-            log.MessageSettings.GetPendingLevel();
+            log.MessageSettings1.GetPendingLevel();
         }
     }
 

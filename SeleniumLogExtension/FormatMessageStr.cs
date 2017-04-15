@@ -13,11 +13,12 @@ namespace SeleniumLogger
     {
         public partial class _MessageSettings
         {
+
             /// <summary>
             /// Aggregate all settings and finally generate the string that will be written to the text log.
             /// </summary>
             /// <returns></returns>
-            public string FormMessageString()
+            public string FormMessageString(bool RICH_TEXT = true)
             {
                 Stack MessageStack = new Stack();
                 string ReturnString = "";
@@ -182,7 +183,7 @@ namespace SeleniumLogger
 
                 if (EnableLogging) indentModel.SimulateIndentations(ReturnString);
 
-                if (!config.RichTextOutput)
+                if (!RICH_TEXT)
                 {
                     for (int i = 0; i < CurrentIndentLevel; i++)
                     {

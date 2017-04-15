@@ -91,10 +91,7 @@ namespace TestHarness
             tests.TestCase1();
             tests.TestCase2();
             tests.TestCase3();
-            
 
-            //ExampleAssertTests assert_test = new ExampleAssertTests();
-            //assert_test.Test1();
             SeleniumLog log = SeleniumLog.Instance();
             log.Info("Test info");
             log.Warning("Test warning");

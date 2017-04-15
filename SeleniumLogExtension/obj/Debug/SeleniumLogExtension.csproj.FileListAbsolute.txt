@@ -6,3 +6,12 @@ C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDri
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\bin\Debug\WebDriver.Support.xml
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Debug\SeleniumLog.dll
 C:\GitHub\SeleniumLog3\Extensions\For .NET\SeleniumLogExtension\obj\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\WebDriver.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\WebDriver.Support.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\WebDriver.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\bin\Debug\WebDriver.Support.xml
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Debug\SeleniumLog.dll
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Debug\SeleniumLog.pdb
+C:\GitHub\SeleniumLog for .NET 5 Log4Net and NLog Interfaces\SeleniumLogExtension\obj\Debug\SeleniumLogExtension.csprojResolveAssemblyReference.cache

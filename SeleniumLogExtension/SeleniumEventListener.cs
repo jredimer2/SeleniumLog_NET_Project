@@ -38,42 +38,50 @@ namespace SeleniumLogger
             }
 
             public void Test(IWebDriver driver, string XPath)
-            {            
-                string XPath2 = Regex.Replace(input: XPath, pattern: @"^\/\/", replacement: "");
-                string[] components = XPath2.Split('/');
-                string cummulative_xpath = "";
-                int i = 0;
-                bool res = false;
-
-                Reset();
-
-                foreach (string comp in components)
+            {
+                try
                 {
-                    i++;
-                    if (i == 1)
-                    {
-                        cummulative_xpath = "//" + comp;
-                    }
-                    else
-                    {
-                        cummulative_xpath = cummulative_xpath + "/" + comp;
-                    }
+                    string XPath2 = Regex.Replace(input: XPath, pattern: @"^\/\/", replacement: "");
+                    string[] components = XPath2.Split('/');
+                    string cummulative_xpath = "";
+                    int i = 0;
+                    bool res = false;
 
-                    //Test component
-                    try
+                    Reset();
+
+                    foreach (string comp in components)
                     {
-                        ReadOnlyCollection<IWebElement> foundelements = driver.FindElements(By.XPath(cummulative_xpath));
-                        if (foundelements.Count > 0)
+                        i++;
+                        if (i == 1)
                         {
-                            Results.Add(new Result(result: true, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                            cummulative_xpath = "//" + comp;
                         }
                         else
                         {
-                            Results.Add(new Result(result: false, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                            cummulative_xpath = cummulative_xpath + "/" + comp;
                         }
+
+                        //Test component
+                        try
+                        {
+                            ReadOnlyCollection<IWebElement> foundelements = driver.FindElements(By.XPath(cummulative_xpath));
+                            if (foundelements.Count > 0)
+                            {
+                                Results.Add(new Result(result: true, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                            }
+                            else
+                            {
+                                Results.Add(new Result(result: false, matches: foundelements.Count, cummulative_xpath: cummulative_xpath));
+                            }
+                        }
+                        catch (InvalidSelectorException e) { }
+
                     }
-                    catch (InvalidSelectorException e) { }
-                     
+                }
+                catch
+                { }
+                finally
+                {
                 }
 
             }
@@ -249,7 +257,7 @@ namespace SeleniumLogger
                 {
                     log.Debug("[Selenium Event]  Element value changing to - NULL or EMPTY - ", take_screenshot: log.Config.OnChangeValue_TakeScreenshotBeforeEvent);
                 }
-                log.RestoreIndent("OnElementValueChanging");
+                log.RestoreIndent("OnElementValueChanging", debug: true);
             }
         }
 
@@ -261,7 +269,7 @@ namespace SeleniumLogger
                 log.SaveIndent("OnElementValueChanged");
                 log.Indent();
                 log.Debug("[Selenium Event]  Successfully changed value [" + webElementEventArgs.Element.GetAttribute("value") + "]", take_screenshot: log.Config.OnChangeValue_TakeScreenshotAfterEvent);
-                log.Indent();
+                log.Unindent();
 
                 if (!string.IsNullOrEmpty(_keyInput))
                 {
@@ -274,11 +282,11 @@ namespace SeleniumLogger
         
         private void OnExceptionThrown(object sender, WebDriverExceptionEventArgs webDriverExceptionEventArgs)
         {
-            SeleniumLog log = SeleniumLog.Instance();
-            log.Indent();          
+            SeleniumLog log = SeleniumLog.Instance();      
 
             if (log.Config.OnWebdriverExceptionThrown_LogEvent)
             {
+                log.Indent();  
                 log.Error().Red().Debug("[Selenium Event]  Exception Thrown: " + webDriverExceptionEventArgs.ThrownException, take_screenshot: true);
                 if (_by == "XPath")
                 {
@@ -288,8 +296,9 @@ namespace SeleniumLogger
                     XPathTest.DisplayResults();
                     log.Unindent();
                 }
+                log.Unindent();
             }
-            log.Unindent();
+            
         }
 
         private void OnFindingElement(object sender, FindElementEventArgs findElementEventArgs)
@@ -303,16 +312,6 @@ namespace SeleniumLogger
             {
                 log.Indent();
                 log.Debug("[Selenium Event]  Finding Element: " + _locator, take_screenshot: log.Config.OnFindElement_TakeScreenshotBeforeEvent);
-
-
-                //string[] FindMethodStr = findElementEventArgs.FindMethod.ToString().Split(':');
-                //_by = FindMethodStr[0].Split('.')[1].Trim();
-                //_locator = FindMethodStr[1].Trim();
-
-                //if (_by == "XPath")
-                //{
-                //    XPathTest.Test(driver, _locator);
-                //}
                 log.Unindent();
             }
         }
